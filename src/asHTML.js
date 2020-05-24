@@ -11,12 +11,13 @@ function sectionHeadingText(section) {
 		return "<i>Error: no H1-H6 inside HGROUP</i>";
 	}
 
-	var textContent = elHeading.textContent;
+	// add heading reanks before
+	var textContent = '<span class="h5o-h '+elHeading.nodeName+'">'+elHeading.nodeName + ' </span><span class="h5o-text">' +elHeading.textContent +'</span>';
 	if (!textContent) {
 		return "<i>No text content inside " + utils.getTagName(elHeading) + "</i>";
 	}
-
-	return utils.escapeHtml(textContent);
+	// todo: escape
+	return textContent;//utils.escapeHtml(textContent);
 }
 
 function getId(section, options) {
