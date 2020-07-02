@@ -12,11 +12,11 @@ function sectionHeadingText(section) {
 	}
 
 	// add heading reanks before
-	var textContent = '<span class="h5o-h '+elHeading.nodeName+'">'+elHeading.nodeName + ' </span><span class="h5o-text">' +utils.getText(elHeading)+'</span>';
+	var textContent = '<span class="h5o-h '+elHeading.nodeName+'">'+elHeading.nodeName + ' </span><span class="h5o-text">' +utils.escapeHtml(utils.getText(elHeading))+'</span>';
 	if (!textContent) {
 		return "<i>No text content inside " + utils.getTagName(elHeading) + "</i>";
 	}
-	// todo: escape
+
 	return textContent;//utils.escapeHtml(textContent);
 }
 
